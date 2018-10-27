@@ -1,0 +1,33 @@
+#!/bin/bash
+
+#program to create a new Latex document with user input
+##############################################################################
+#variable collection
+##############################################################################
+echo "Document's file name(no whitespaces)?"
+read fileName
+echo "document title?"
+read title
+echo "Author's name?"
+read author
+echo "document type?"
+read docClass
+echo "font size?"
+read fontSize
+echo "document date?"
+read givenDate
+
+echo "\documentclass[${fontSize}pt,a4paper]{$docClass}
+\title{$title}
+\author{$author}
+\date{$givenDate}
+\begin{document}
+\maketitle
+
+	your text here
+\end{document}
+" > $PWD/${fileName}.tex
+
+
+
+exit 0
